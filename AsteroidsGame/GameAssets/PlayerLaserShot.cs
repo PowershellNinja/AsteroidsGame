@@ -132,9 +132,9 @@ namespace AsteroidsGame.GameAssets
         public static Texture2D laserShotTexture;
         public SpriteBatch spriteBatch;
 
-        public PlayerShotHandler(ContentManager content, GraphicsDevice graphicsDevice)
+        public PlayerShotHandler(GraphicsDevice device, ContentManager content, GraphicsDevice graphicsDevice)
         {
-            laserShotTexture = content.Load<Texture2D>("LaserShotsOrange.png");
+            laserShotTexture = PngLoader.Load(device, "Content/LaserShotsOrange.png");
             this.playerShotDefinitionList = new PlayerLaserShotUpgradeStatusList();
             this.spriteBatch = new SpriteBatch(graphicsDevice);
             this.playerLaserShotList = new List<PlayerLaserShot>();

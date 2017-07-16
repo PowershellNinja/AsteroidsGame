@@ -10,6 +10,7 @@
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Content;
     using Microsoft.Xna.Framework.Graphics;
+    using AsteroidsGame;
 
     public class SpriteSheetLoader
     {
@@ -28,23 +29,23 @@
 #endif
         }
 
-        public SpriteSheet MultiLoad(string imageResourceFormat, int numSheets)
+        public SpriteSheet MultiLoad(GraphicsDevice device, string imageResourceFormat, int numSheets)
         {
             SpriteSheet result = new SpriteSheet();
             for (int i = 0; i < numSheets; i++)
             {
                 string imageResource = string.Format(imageResourceFormat, i);
 
-                SpriteSheet tmp = Load(imageResource);
+                SpriteSheet tmp = Load(device, imageResource);
                 result.Add(tmp);
             }
             return result;
         }
 
 
-        public SpriteSheet Load(string imageResource)
+        public SpriteSheet Load(GraphicsDevice device, string imageResource)
         {
-            var texture = this.contentManager.Load<Texture2D>(imageResource);
+            var texture = PngLoader.Load(device, $"Content/{imageResource}");
 
             var dataFile = Path.Combine(
                 this.contentManager.RootDirectory,

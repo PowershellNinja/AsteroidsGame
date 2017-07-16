@@ -31,12 +31,12 @@ namespace AsteroidsGame.GameAssets
         }
 
 
-        public void LoadBackGround(ContentManager content)
+        public void LoadBackGround(GraphicsDevice device, ContentManager content)
         {
 
             //Load Background
-            backgroundSprite1 = content.Load<Texture2D>("GalaxyBackgroundLarge_1920x1080.png");
-            backgroundSprite2 = content.Load<Texture2D>("GalaxyBackgroundLarge_1920x1080.png");
+            backgroundSprite1 = PngLoader.Load(device, "Content/GalaxyBackgroundLarge_1920x1080.png");
+            backgroundSprite2 = PngLoader.Load(device, "Content/GalaxyBackgroundLarge_1920x1080.png");
             background1Position = new Vector2(0, 0);
             background2Position = new Vector2(0, 0 - backgroundSprite1.Height);
 

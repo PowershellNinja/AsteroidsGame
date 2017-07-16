@@ -10,7 +10,7 @@ using AsteroidsGame.GameAssets;
 using AsteroidsGame.Screens;
 using TexturePackerMonoGameDefinitions;
 using TexturePackerLoader;
-
+using System.IO;
 
 namespace AsteroidsGame
 {
@@ -140,21 +140,24 @@ namespace AsteroidsGame
 
             spriteSheetLoader = new SpriteSheetLoader(Content);
 
-            startMenuBackgroundSprite = Content.Load<Texture2D>("StartScreen.png");
+            //startMenuBackgroundSprite = Content.Load<Texture2D>("StartScreen.png");
+
+            //var s = File.OpenRead("Content/StartScreen.png");
+            startMenuBackgroundSprite = PngLoader.Load(this.GraphicsDevice, "Content/StartScreen.png");
 
 
-            backgroundAnimation.LoadBackGround(Content);
+            backgroundAnimation.LoadBackGround(this.GraphicsDevice, Content);
             backgroundAnimation.spriteBatch = new SpriteBatch(GraphicsDevice);
 
             
-            HealthBar.healthBarTexture = Content.Load<Texture2D>("HealthBar.png");
-            EnemyClass.enemyTexture = Content.Load<Texture2D>("EnemyShip.png");
+            HealthBar.healthBarTexture = PngLoader.Load(this.GraphicsDevice, "Content/HealthBar.png");
+            EnemyClass.enemyTexture = PngLoader.Load(this.GraphicsDevice, "Content/EnemyShip.png");
 
 
-            player.InitializeAndLoadPlayer(Content, initialPlayerPosition, new SpriteBatch(GraphicsDevice));
+            player.InitializeAndLoadPlayer(this.GraphicsDevice, Content, initialPlayerPosition, new SpriteBatch(GraphicsDevice));
             player.spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            playerShotHandler = new PlayerShotHandler(Content, GraphicsDevice);
+            playerShotHandler = new PlayerShotHandler(this.GraphicsDevice, Content, GraphicsDevice);
             playerShotHandler.playerShootingSpawnCounter = 0;
             playerShotHandler.shootingStartPositionCorrection = new Vector2((player.playerTexture.Width * player.shipScale.X) / 2, 0);
 
@@ -162,11 +165,11 @@ namespace AsteroidsGame
             arialFont = Content.Load<SpriteFont>("Arial");
             arialFont28 = Content.Load<SpriteFont>("Arial_28");
 
-            TextureManager.enemySpriteSheet = spriteSheetLoader.Load("EnemyDeathAnimationTexture.png");
+            TextureManager.enemySpriteSheet = spriteSheetLoader.Load(this.GraphicsDevice, "EnemyDeathAnimationTexture.png");
 
-            startButtonSprite = Content.Load<Texture2D>("StartButton.png");
-            upgradeButtonSprite = Content.Load<Texture2D>("UpgradesButton.png");
-            exitButtonSprite = Content.Load<Texture2D>("ExitButton.png");
+            startButtonSprite = PngLoader.Load(this.GraphicsDevice, "Content/StartButton.png");
+            upgradeButtonSprite = PngLoader.Load(this.GraphicsDevice, "Content/UpgradesButton.png");
+            exitButtonSprite = PngLoader.Load(this.GraphicsDevice, "Content/ExitButton.png");
 
             startMenuScreen.LoadStartMenu(GraphicsDevice, Content, screenWidth, startMenuBackgroundSprite,startButtonSprite,upgradeButtonSprite,exitButtonSprite);
             startMenuScreen.spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -429,8 +432,5 @@ namespace AsteroidsGame
             //enemyDAL.Subscribe(newEnemy);
             enemies.Add(newEnemy);
         }
-
-        
-
     }
 }

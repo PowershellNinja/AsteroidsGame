@@ -58,6 +58,7 @@
     <Compile Include="GameAssets\SpriteAnimations\EnemyDeathAnimation.cs" />
     <Compile Include="GameAssets\TextureManager.cs" />
     <Compile Include="GameAssets\TexturePackerClasses\EnemyDeathAnimationSpriteSheet.cs" />
+    <Compile Include="PngLoader.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Screens\GameOverScreen.cs" />
