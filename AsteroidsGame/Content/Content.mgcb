@@ -1,0 +1,63 @@
+
+#----------------------------- Global Properties ----------------------------#
+
+/outputDir:bin/Windows
+/intermediateDir:obj/Windows
+/platform:Windows
+/config:
+/profile:Reach
+/compress:False
+
+#-------------------------------- References --------------------------------#
+
+
+#---------------------------------- Content ---------------------------------#
+
+#begin SpaceshipPlayer.png
+/copy:SpaceshipPlayer.png
+
+#begin ExitButton.png
+/copy:ExitButton.png
+
+#begin StartButton.png
+/copy:StartButton.png
+
+#begin StartScreen.png
+/copy:StartScreen.png
+
+#begin UpgradesButton.png
+/copy:UpgradesButton.png
+
+#begin EnemyShip.png
+/copy:EnemyShip.png
+
+#begin EnemyDeathAnimationTexture.png
+/copy:EnemyDeathAnimationTexture.png
+
+#begin EnemyDeathAnimationTexture.txt
+/copy:EnemyDeathAnimationTexture.txt
+
+#begin LaserShotsOrange.png
+/copy:LaserShotsOrange.png
+
+#begin HealthBar.png
+/copy:HealthBar.png
+
+#begin Arial.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:TextureFormat=Compressed
+/build:Arial.spritefont
+
+#begin HealthBarSimple.png
+/copy:HealthBarSimple.png
+
+#begin Arial_28.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:TextureFormat=Compressed
+/build:Arial_28.spritefont
+
+#begin GalaxyBackgroundLarge_1920x1080.png
+/copy:GalaxyBackgroundLarge_1920x1080.png
+
