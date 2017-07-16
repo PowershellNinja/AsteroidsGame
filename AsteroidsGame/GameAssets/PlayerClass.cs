@@ -35,14 +35,14 @@ namespace AsteroidsGame.GameAssets
 
         }
 
-        public void InitializeAndLoadPlayer(ContentManager content,Vector2 initalPosition, SpriteBatch hbSpriteBatch)
+        public void InitializeAndLoadPlayer(GraphicsDevice device, ContentManager content,Vector2 initalPosition, SpriteBatch hbSpriteBatch)
         {
             this.playerPosition = initalPosition;
             this.playerHealth = 100;
             this.playerBaseDamage = 25;
             this.playerDamageMultiplier = 1f;
             this.playerResultingDamage = (int)(this.playerBaseDamage * this.playerDamageMultiplier);
-            this.playerTexture = content.Load<Texture2D>("SpaceshipPlayer.png");
+            this.playerTexture = PngLoader.Load(device, "Content/SpaceshipPlayer.png");
             this.healthbarXCorrection = 5;
 
             float hbScale = 0.4f;

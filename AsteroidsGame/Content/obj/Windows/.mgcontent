@@ -4,7 +4,7 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Raphael.RBOOK/Documents/Visual Studio 2015/Projects/AsteroidsGame/AsteroidsGame/Content/Arial.spritefont</File>
-    <File>C:/Users/Raphael.RBOOK/Documents/Visual Studio 2015/Projects/AsteroidsGame/AsteroidsGame/Content/Arial_28.spritefont</File>
+    <File>C:/Users/schwindelig/AsteroidsGame/AsteroidsGame/Content/Arial.spritefont</File>
+    <File>C:/Users/schwindelig/AsteroidsGame/AsteroidsGame/Content/Arial_28.spritefont</File>
   </SourceFiles>
 </SourceFileCollection>
